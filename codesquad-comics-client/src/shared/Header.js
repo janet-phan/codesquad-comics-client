@@ -7,7 +7,7 @@ const Header = () => {
 <nav>
 
 <a href="#">
-  <img src="public/images/CodeSquad-Comics-logo.png"/>
+  <img src="/images/CodeSquad-Comics-logo.png"/>
 </a>
 <i className="fa fa-bars"></i>
 <ul>

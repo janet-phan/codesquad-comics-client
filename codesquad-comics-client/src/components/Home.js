@@ -1,11 +1,11 @@
-import React from 'react';
+import React from "react";
+import booksData from "../data/books"
 
 
 const Home = () => {
-    return (
-
-        <main>
-      <div class="home">
+  return (
+    <main>
+      <div className="home">
         <h1>CODESQUAD COMICS</h1>
         <p>
           CodeSquad Comics is a collection of graphic novels read by Janet Phan.
@@ -21,104 +21,31 @@ const Home = () => {
         <br />
       </div>
 
-      <div class="comic-collection">
+      <div className="comic-collection">
         <h2>COMPLETE COLLECTION</h2>
-        <article>
-          <a href="#"><img src="public/images/fun-home.jpg" /></a>
+        {booksData.map((book) => (
+        <article key={book._id}>
+          <a href="#">
+            <img src={"/images/" + book.image} />
+          </a>
           <br />
-          <i>Fun Home: A Family Tragicomic</i>
-          <br />by Alison Bechdel <br />5 stars <br /><a href="#">Details</a>
+          <i>{book.title}</i>
           <br />
-        </article>
-        <article>
-          <a href="#"><img src="public/images/watchmen.jpg" /></a>
-          <br />
-          <i>Watchmen</i>
-          <br />by Alan Moore <br />5 stars <br /><a href="#">Details</a>
-          <br />
-        </article>
-        <article>
-          <a href="#"><img src="public/images/hunter-x-hunter.jpg" /></a>
-          <br />
-          <i>Hunter x Hunter Vol. 1</i>
-          <br />by Yoshihiro Togashi <br />5 stars <br /><a href="#">Details</a>
+          by {book.author} <br />
+          {book.rating} stars <br />
+          <a href="#">Details</a>
           <br />
         </article>
-        <article>
-          <a href="#"><img src="public/images/lumberjanes.jpg" /></a>
-          <br />
-          <i>Lumberjanes Vol. 1</i>
-          <br />by Noelle Stevenson <br />4 stars <br /><a href="#">Details</a>
-          <br />
-        </article>
-        <article>
-          <a href="onepiece-vol1.html"
-            ><img src="public/images/one-piece.jpg"
-          /></a>
-          <br />
-          <i>One Piece, Vol. 1: Romance Dawn</i>
-          <br />by Eiichiro Oda <br />5 stars <br /><a href="onepiece-vol1.html"
-            >Details</a
-          >
-          <br />
-        </article>
-        <article>
-          <a href="#"><img src="public/images/wake.jpg" /></a>
-          <br />
-          <i>Wake: The Hidden History of Women-Led Slave Revolts</i>
-          <br />by Rebecca Hall <br />4 stars <br /><a href="#">Details</a>
-          <br />
-        </article>
-        <article>
-          <a href="#"><img src="public/images/black-panther.jpg" /></a>
-          <br />
-          <i>Black Panther: A Nation Under Our Feet Book 1</i>
-          <br />by Ta-Nehisi Coates <br />3 stars <br /><a href="#">Details</a>
-          <br />
-        </article>
-        <article>
-          <a href="#"><img src="public/images/the-walking-dead.jpg" /></a>
-          <br />
-          <i>The Walking Dead, Vol. 1: Days Gone Bye</i>
-          <br />by Robert Kirkman <br />4 stars <br /><a href="#">Details</a>
-          <br />
-        </article>
-        <article>
-          <a href="#"><img src="public/images/march.jpg" /></a>
-          <br />
-          <i>March: Book One</i>
-          <br />by John Lewis <br />5 stars <br /><a href="#">Details</a>
-          <br />
-        </article>
-        <article>
-          <a href="#"><img src="public/images/batman.jpg" /></a>
-          <br />
-          <i>Batman: The Dark Knight Returns</i>
-          <br />by Frank Miller <br />3 stars <br /><a href="#">Details</a>
-          <br />
-        </article>
-        <article>
-          <a href="#"><img src="public/images/queer.jpg" /></a>
-          <br />
-          <i>Queer: A Graphic History</i>
-          <br />by Meg-John Barker <br />4 stars <br /><a href="#">Details</a>
-          <br />
-        </article>
-        <article>
-          <a href="#"><img src="public/images/parable-of-the-sower.jpg" /></a>
-          <br />
-          <i>Parable of the Sower</i>
-          <br />by Octavia E. Butler <br />4 stars <br /><a href="#">Details</a>
-        </article>
+      ))
 
+      }
+      
         <br />
         <br />
-        <button class="more-comics-button">DISPLAY MORE</button>
+        <button className="more-comics-button">DISPLAY MORE</button>
       </div>
     </main>
-        
+  );
+};
 
-    )
-  }
-
-  export default Home;
+export default Home;

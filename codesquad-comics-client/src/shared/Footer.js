@@ -31,12 +31,12 @@ const Footer = () => {
         <div className="column">
           <h2>A PRODUCT OF</h2>
           <p>
-            <a href="http://codesquad.org" target="_blank"><img src="public/images/CodeSquad-logo-a.png"/></a>
+            <a href="http://codesquad.org" target="_blank"><img src="/images/CodeSquad-logo.png"/></a>
           </p>
         </div>
 
 
-</footer>>
+</footer>
     )
   }
 
