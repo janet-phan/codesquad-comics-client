@@ -1,7 +1,14 @@
 import React from "react";
 import booksData from "../data/books";
 
+
 const Admin = () => {
+  const [books, setBooks] = useState([]);
+  useInsertionEffect(() => {
+    const booksData = getBooks();
+    setBooks(booksData);
+  }, []);
+
   return (
     <div>
       <main className="admin-main">

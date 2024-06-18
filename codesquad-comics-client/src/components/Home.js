@@ -1,8 +1,15 @@
-import React from "react";
-import booksData from "../data/books"
+import React, { useState, useEffect } from "react";
+import { getBooks } from "../data/books";
 
 
-const Home = () => {
+function Home() {
+  const [booksData, setBooksData] = useState([]);
+
+  useEffect(() => {
+    const fetchedBooks = getBooks();
+    setBooksData(fetchedBooks);
+  }, []);
+
   return (
     <main>
       <div className="home">
@@ -22,11 +29,11 @@ const Home = () => {
       </div>
 
       <div className="comic-collection">
-        <h2>COMPLETE COLLECTION</h2>
-        {booksData.map((book) => (
+      <h2>COMPLETE COLLECTION</h2>
+      {booksData.map((book) => (
         <article key={book._id}>
           <a href="#">
-            <img src={"/images/" + book.image} />
+            <img src={"/images/" + book.image} alt={book.title} />
           </a>
           <br />
           <i>{book.title}</i>
@@ -36,14 +43,12 @@ const Home = () => {
           <a href="#">Details</a>
           <br />
         </article>
-      ))
+      ))}
 
-      }
-      
-        <br />
-        <br />
-        <button className="more-comics-button">DISPLAY MORE</button>
-      </div>
+      <br />
+      <br />
+      <button className="more-comics-button">DISPLAY MORE</button>
+    </div>
     </main>
   );
 };
